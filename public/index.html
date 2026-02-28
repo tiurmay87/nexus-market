@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexus Market — Premium Tech Store</title>
+  <meta name="description" content="Marketplace de tecnología premium. Productos de Apple, Samsung, Sony y más marcas líderes." />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- React 18 via CDN (no build step required) -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <!-- Babel for in-browser JSX-free transform (plain JS with React.createElement) -->
+</head>
+<body>
+  <div id="root"></div>
+
+  <!--
+    Load order matters — each file depends on the ones above it:
+    1. Data
+    2. Utilities / formatters
+    3. Leaf components (no deps on other components)
+    4. Composite components
+    5. Root App
+    6. Bootstrap (mount)
+  -->
+
+  <!-- Data -->
+  <script src="../src/data/products.js"></script>
+
+  <!-- Utilities -->
+  <script src="../src/utils/formatters.js"></script>
+
+  <!-- Leaf components -->
+  <script src="../src/components/StarRating.js"></script>
+  <script src="../src/components/Field.js"></script>
+
+  <!-- Composite components -->
+  <script src="../src/components/ProductCard.js"></script>
+  <script src="../src/components/ProductDetail.js"></script>
+  <script src="../src/components/CheckoutPage.js"></script>
+
+  <!-- Root -->
+  <script src="../src/components/App.js"></script>
+
+  <!-- Mount -->
+  <script>
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(React.createElement(App));
+  </script>
+</body>
+</html>

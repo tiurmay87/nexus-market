@@ -1,0 +1,79 @@
+/* ─── Google Fonts ─────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;500;600;700;800&display=swap');
+
+/* ─── Reset ─────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'DM Sans', 'Segoe UI', sans-serif;
+  background: #fafbff;
+  color: #0f172a;
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────── */
+::-webkit-scrollbar        { width: 6px; }
+::-webkit-scrollbar-track  { background: #f1f5f9; }
+::-webkit-scrollbar-thumb  { background: #cbd5e1; border-radius: 3px; }
+
+/* ─── Native select appearance reset ────────────────────── */
+select {
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+/* ─── Form inputs ────────────────────────────────────────── */
+input:focus {
+  border-color: #6366f1 !important;
+  outline: none;
+}
+
+input {
+  transition: border-color 0.2s;
+}
+
+/* ─── Animations ─────────────────────────────────────────── */
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.slide-in {
+  animation: slideIn 0.3s ease;
+}
+
+/* ─── Responsive: stack checkout grid on small screens ───── */
+@media (max-width: 768px) {
+  header {
+    padding: 0 16px !important;
+    gap: 12px !important;
+  }
+
+  .main-content {
+    padding: 20px 16px !important;
+  }
+
+  /* Checkout two-column → single column */
+  .checkout-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Product detail two-column → single column */
+  .detail-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Hero banner smaller padding */
+  .hero {
+    padding: 32px 24px !important;
+  }
+
+  .hero h1 {
+    font-size: 32px !important;
+  }
+}
